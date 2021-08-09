@@ -1,0 +1,46 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [{
+		"path": "pages/storage/index"
+	}, {
+		"path": "pages/home/index"
+	}, {
+		"path": "pages/login/login"
+	}, {
+		"path": "pages/user/profile"
+	}],
+	"globalStyle": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "好打印",
+		"navigationBarTextStyle": "black",
+		"navigationStyle": "custom"
+	},
+	"tabBar": {
+		"selectedColor": "#32B8B7",
+		"color": "#19252F",
+		"backgroundColor": "#fff",
+		"list": [{
+				"pagePath": "pages/home/index",
+				"text": "首页",
+				"iconPath": "/static/image/tabs/icon_home.png",
+				"selectedIconPath": "/static/image/tabs/icon_home_active.png"
+			},
+			{
+				"pagePath": "pages/storage/index",
+				"text": "文件库",
+				"iconPath": "/static/image/tabs/icon_storage.png",
+				"selectedIconPath": "/static/image/tabs/icon_storage_active.png"
+			},
+			{
+				"pagePath": "pages/user/profile",
+				"text": "个人中心",
+				"iconPath": "/static/image/tabs/icon_profile.png",
+				"selectedIconPath": "/static/image/tabs/icon_profile_active.png"
+			}
+		]
+	}
+
+}

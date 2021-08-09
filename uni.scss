@@ -1,0 +1,178 @@
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+
+/* 颜色变量 */
+@import 'uview-ui/theme.scss';
+$primary-color:#32B8B7;
+$bg-grey: #FAFAFA;
+$line-grey: #e5e5e5;
+
+/* 行为相关颜色 */
+$uni-color-primary: #007aff;
+$uni-color-success: #4cd964;
+$uni-color-warning: #f0ad4e;
+$uni-color-error: #dd524d;
+/* 文字基本颜色 */
+$uni-text-color:#333; //基本色
+$uni-text-color-inverse:#fff; //反色
+$uni-text-color-grey:#999; //辅助灰色，如加载更多的提示信息
+$uni-text-color-active:#D9A865;
+$uni-text-color-text:#666666;
+$uni-text-color-tab:#7F8389;
+$uni-text-color-disable:#c0c0c0;
+$uni-text-color-33:#333333;
+
+/* 背景颜色 */
+$uni-bg-color:linear-gradient(136deg, rgba(245, 195, 125, 1) 0%, rgba(214, 160, 87, 1) 100%);
+$uni-bg-color-grey:#f8f8f8;
+$uni-bg-color-bgc:#F5F5F5;
+$uni-bg-color-white:#ffffff;
+$uni-bg-color-hover:#f1f1f1; //点击状态颜色
+$uni-bg-color-mask:rgba(0, 0, 0, 0.4); //遮罩颜色
+
+/* 边框颜色 */
+$uni-border-color:#c8c7cc;
+
+/* 尺寸变量 */
+
+/* 文字尺寸 */
+$uni-font-size-sm:24rpx;
+$uni-font-size-base:28rpx;
+$uni-font-size-lg:32rpx;
+$uni-font-size-tab:20rpx;
+$uni-font-size-18:18rpx;
+
+/* 图片尺寸 */
+$uni-img-size-sm:40rpx;
+$uni-img-size-base:52rpx;
+$uni-img-size-lg:80rpx;
+
+/* Border Radius */
+$uni-border-radius-sm: 4rpx;
+$uni-border-radius-base: 6rpx;
+$uni-border-radius-lg: 12rpx;
+$uni-border-radius-circle: 50%;
+
+/* 水平间距 */
+$uni-spacing-row-sm: 10px;
+$uni-spacing-row-base: 20rpx;
+$uni-spacing-row-lg: 30rpx;
+
+/* 垂直间距 */
+$uni-spacing-col-sm: 8rpx;
+$uni-spacing-col-base: 16rpx;
+$uni-spacing-col-lg: 24rpx;
+$uni-spacing-col-14:12rpx;
+
+/* 透明度 */
+$uni-opacity-disabled: 0.3; // 组件禁用态的透明度
+
+/* 文章场景相关 */
+$uni-color-title: #2C405A; // 文章标题颜色
+$uni-font-size-title:40rpx;
+$uni-color-subtitle: #555555; // 二级标题颜色
+$uni-font-size-subtitle:36rpx;
+$uni-color-paragraph: #3F536E; // 文章段落颜色
+$uni-font-size-paragraph:30rpx;
+
+view,
+scroll-view,
+swiper,
+swiper-item,
+movable-area,
+movable-view,
+cover-view,
+cover-image,
+icon,
+text,
+rich-text,
+progress,
+button,
+checkbox-group,
+checkbox,
+form,
+input,
+label,
+picker,
+picker-view,
+radio-group,
+radio,
+slider,
+switch,
+textarea,
+navigator,
+functional-page-navigator,
+image,
+video,
+camera,
+live-player,
+live-pusher,
+map,
+canvas,
+open-data,
+web-view,
+ad {
+  box-sizing: border-box;
+}
+
+@mixin multi-line($line: 2) {
+  -webkit-line-clamp: $line;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal !important;
+  width: 100%;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+
+@mixin border-arrow($color:$primary-color, $top:20px, $size:7px) {
+  position: relative;
+  padding-right: calc(#{$size} * 1.6);
+
+  &:after {
+    content: "";
+    border-right: 1px solid $color;
+    border-bottom: 1px solid $color;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: $top;
+    width: $size;
+    height: $size;
+  }
+
+}
+
+@mixin border-btm($color:$line-grey, $withLastChild:true) {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: '';
+    width: 200%;
+    left: -50%;
+    top: 100%;
+    border-bottom: 1px solid $color;
+    transform: scale(.5);
+  }
+
+  @if $withLastChild {
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
