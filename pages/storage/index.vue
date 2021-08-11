@@ -22,8 +22,7 @@
     <Modal ref="addModal" title="新建文件夹" @onOk="addFolder" />
     <Modal ref="renameModal" :title="renameTip" :defaultText="renameText" @onOk="doRename" />
 
-    <u-action-sheet :list="opts" v-model="showOpt" cancel-btn="true" @click="optClick"></u-action-sheet>
-    
+    <u-action-sheet :list="opts" v-model="showOpt" cancel-btn="true" @click="optClick"></u-action-sheet>   
     <u-modal v-model="showDelete" content="确定删除吗？" @confirm="doDelete" confirm-color="#32B8B7" :show-title="false" show-cancel-button="true"></u-modal>
 
 </div>
@@ -34,7 +33,6 @@ import HeaderTitle from '../../components/HeaderTitle'
 import DraggableBtn from '../../components/DraggableBtn'
 import Modal from '../../components/Modal'
 import Toast from '../../components/Toast'
-
 export default {
     data() {
         return {
